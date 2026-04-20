@@ -230,12 +230,57 @@ footer p { margin-bottom: 10px; color: #888; }
     font-size: 1.5rem;
 }
 
-/* RESPONSIVIDADE */
+/* RESPONSIVIDADE CORRIGIDA */
 @media (max-width: 768px) {
-    header { padding: 20px; }
-    nav { display: none; }
-    .hero h1 { font-size: 2.8rem; }
-    .stats { gap: 30px; }
-    .promo { padding: 0 20px; justify-content: center; text-align: center; }
-    .card img { height: 280px; }
+    header { 
+        padding: 15px 20px; 
+        flex-direction: column; /* Coloca a logo em cima e o menu embaixo */
+        gap: 10px;
+        height: auto;
+        background: rgba(0,0,0,0.95); /* Garante leitura no mobile */
+    }
+
+    /* REMOVIDO O DISPLAY NONE - Agora ele aparece organizado */
+    nav { 
+        display: flex; 
+        justify-content: center; 
+        gap: 15px; 
+        width: 100%;
+    }
+
+    nav a {
+        margin: 0;
+        font-size: 13px; /* Diminui um pouco a letra para caber tudo em uma linha */
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .logo span {
+        font-size: 18px;
+    }
+
+    .hero h1 { 
+        font-size: 2.5rem; 
+    }
+
+    .stats { 
+        gap: 30px; 
+        flex-direction: column; /* Stats um embaixo do outro no celular */
+    }
+
+    .promo { 
+        padding: 20px; 
+        justify-content: center; 
+        text-align: center; 
+        height: auto;
+        min-height: 400px;
+    }
+
+    .card img { 
+        height: 250px; 
+    }
+
+    .beneficios {
+        padding: 40px 20px;
+    }
 }
